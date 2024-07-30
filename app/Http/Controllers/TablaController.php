@@ -63,7 +63,8 @@ class TablaController extends Controller
         }
     }
     $positions = collect($positions)->sortByDesc('points');
+    $count = 1;
 
-    return view('welcome', compact('positions', 'data'));
+    return view('welcome', compact('positions', 'data','count'));
     }
 }

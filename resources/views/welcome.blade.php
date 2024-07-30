@@ -42,17 +42,19 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
+                                        <th>Nro°</th>
                                         <th>Equipo</th>
-                                        <th>PJ</th>
-                                        <th>V</th>
-                                        <th>P</th>
-                                        <th>E</th>
-                                        <th>Puntos</th>
+                                        <th style="text-align: center;">PJ</th>
+                                        <th style="text-align: center;">V</th>
+                                        <th style="text-align: center;">P</th>
+                                        <th style="text-align: center;">E</th>
+                                        <th style="text-align: center;">Puntos</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($positions as $position)
+                                    @foreach ($positions as $key => $position)
                                         <tr>
+                                            <td width="5%" style="text-align: center;">{{ $count }}</td>
                                             <td class="text-left">{{ $position['team'] }}</td>
                                             <td class="text-center">{{ $position['played'] }}</td>
                                             <td class="text-center">{{ $position['won'] }}</td>
@@ -60,6 +62,7 @@
                                             <td class="text-center">{{ $position['drawn'] }}</td>
                                             <td class="text-center">{{ $position['points'] }}</td>
                                         </tr>
+                                        <td class="hide">{{$count++}}</td>
                                     @endforeach
                                 </tbody>
                             </table>
